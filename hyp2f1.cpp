@@ -2,9 +2,9 @@
 
 namespace{
 
-void hypser(std::complex<double> const &a, std::complex<double> const &b, std::complex<double> const &c, std::complex<double> const &z, std::complex<double> &series, std::complex<double> &deriv)
+std::complex<double> hypser(std::complex<double> const &a, std::complex<double> const &b, std::complex<double> const &c, std::complex<double> const &z, std::complex<double> &series)
 {
-  deriv=0.0;
+  std::complex<double> deriv=0.0;
   std::complex<double> fac=1.0;
   std::complex<double> temp=fac;
   std::complex<double> aa=a;
@@ -16,7 +16,7 @@ void hypser(std::complex<double> const &a, std::complex<double> const &b, std::c
     deriv += fac;
     fac *= (1.0/n)*z;
     series=temp+fac;
-    if (series == temp) return;
+    if (series == temp) return deriv;
     temp=series;
     aa += 1.0;
     bb += 1.0;
@@ -33,14 +33,14 @@ std::complex<double> hypgeo(std::complex<double> const &a, std::complex<double> 
   std::array<std::complex<double>,2>y;
   if (std::norm(z) <= 0.25)
   {
-    hypser(a,b,c,z,ans,y[1]);
+    y.back()=hypser(a,b,c,z,ans);
     return ans;
   }
   else if (std::real(z) < 0) z0=-0.5;
   else if (std::real(z) <= 1) z0=0.5;
   else z0=std::complex<double>(0.0,std::imag(z) >= 0.0 ? 0.5 : -0.5);
   dz=z-z0;
-  hypser(a,b,c,z0,y[0],y[1]);
+  y.back()=hypser(a,b,c,z0,y.front());
   boost::numeric::odeint::integrate_adaptive(boost::numeric::odeint::bulirsch_stoer<std::array<std::complex<double>,2>>{1e-14,1e-14},
       [&](std::array<std::complex<double>,2> const&y,std::array<std::complex<double>,2>&dyds,double const s)
       {
