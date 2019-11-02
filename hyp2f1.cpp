@@ -13,8 +13,7 @@ std::array<std::complex<double>, 2> hypser(std::complex<double> const &A, std::c
     deriv += fac;
     fac *= 1. / n * Z;
     series = temp + fac;
-    if (series == temp)
-      return {series, deriv};
+    if (series == temp) return {series, deriv};
     temp = series;
     a += 1;
     b += 1;
