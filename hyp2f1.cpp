@@ -1,5 +1,7 @@
 #include <boost/numeric/odeint.hpp>
 
+export module hyp2f1;
+
 namespace {
 
 std::array<std::complex<double>, 2> hypser(std::complex<double> const &A, std::complex<double> const &B,
@@ -24,8 +26,8 @@ std::array<std::complex<double>, 2> hypser(std::complex<double> const &A, std::c
 
 } // namespace
 
-std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<double> const &B,
-                            std::complex<double> const &C, std::complex<double> const &Z)
+export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<double> const &B,
+                                   std::complex<double> const &C, std::complex<double> const &Z)
 {
     std::complex<double> z0;
     if (std::norm(Z) <= 0.25) return hypser(A, B, C, Z).front();
@@ -48,12 +50,3 @@ std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<double> 
         dependentVariable, 0., 1., 0.1);
     return dependentVariable.front();
 }
-
-int main()
-{
-    using namespace std::literals;
-    std::cout << hyp2f1(1. + 1i, 0.75, 10i, 1. + 5i) << std::endl;
-}
-
-//compile//g++ -std=c++1z -O2 -march=native
-//test//import mpmath; mpmath.hyp2f1(1+j, 0.75, 10j, 1+5j)
