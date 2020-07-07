@@ -5,5 +5,5 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - run: |
-              g++-10 -v
-              clang++-10 -v
+              g++-9 -v
+              clang++-9 -v
