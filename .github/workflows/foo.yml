@@ -6,4 +6,4 @@ jobs:
         - uses: actions/checkout@v2
         - run: |
               g++-9 -v
-              clang++-9 -v
+              clang++-10 -v
