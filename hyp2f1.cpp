@@ -94,29 +94,3 @@ struct push_back_state_and_time
         m_times.push_back( t );
     }
 };
-
-int main()
-{
-    using namespace std;
-    using namespace boost::numeric::odeint;
-    state_type x(2);
-    x[0] = 1.0; // start at x=1.0, p=0.0
-    x[1] = 0.0;
-    size_t steps = integrate( harmonic_oscillator ,
-            x , 0.0 , 10.0 , 0.1 );
-    harm_osc ho(0.15);
-    steps = integrate( ho ,
-            x , 0.0 , 10.0 , 0.1 );
-    vector<state_type> x_vec;
-    vector<double> times;
-
-    steps = integrate( harmonic_oscillator ,
-            x , 0.0 , 10.0 , 0.1 ,
-            push_back_state_and_time( x_vec , times ) );
-
-    /* output */
-    for( size_t i=0; i<=steps; i++ )
-    {
-        cout << times[i] << '\t' << x_vec[i][0] << '\t' << x_vec[i][1] << '\n';
-    }
-}
