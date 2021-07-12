@@ -6,12 +6,12 @@ jobs:
         steps:
         - uses: actions/checkout@main
         - run: |
-              curl -L https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2 | tar -xj boost_1_76_0/boost
-              mv boost_1_76_0/boost boost
-              #g++ -std=c++2a -O2 -march=native -fmodules-ts -I. hyp2f1.cpp main.cpp
-              #./a.out
-              git add boost
-              git config user.name 'Your Name'
-              git config user.email 'you@example.com'
-              git commit --allow-empty-message -m ''
-              git push
+              #curl -L https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2 | tar -xj boost_1_76_0/boost
+              #mv boost_1_76_0/boost boost
+              g++ -std=c++2a -O2 -march=native -fmodules-ts -I. hyp2f1.cpp main.cpp
+              ./a.out
+              #git add boost
+              #git config user.name 'Your Name'
+              #git config user.email 'you@example.com'
+              #git commit --allow-empty-message -m ''
+              #git push
