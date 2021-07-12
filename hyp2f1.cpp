@@ -51,9 +51,6 @@ export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<d
     return dependentVariable.front();
 }*/
 
-#include <iostream>
-#include <vector>
-
 #include <boost/numeric/odeint.hpp>
 
 typedef std::vector< double > state_type;
