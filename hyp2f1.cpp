@@ -1,6 +1,6 @@
-/*export module hyp2f1;
-
+module;
 #include <boost/numeric/odeint.hpp>
+export module hyp2f1;
 
 namespace {
 
@@ -49,13 +49,4 @@ export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<d
         },
         dependentVariable, 0., 1., 0.1);
     return dependentVariable.front();
-}*/
-
-module;
-import <iostream>;
-import <string_view>;
-export module hyp2f1;
-export void greeter (std::string_view const &name)
-{
-  std::cout << "Hello " << name << "!\n";
 }
