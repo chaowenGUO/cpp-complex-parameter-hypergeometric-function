@@ -1,4 +1,4 @@
-import hyp2f1;
+#include "hyp2f1.hpp"
 #include<iostream>
 #include<complex>
 
