@@ -5,8 +5,12 @@ jobs:
         container: gcc
         steps:
         - uses: actions/checkout@main
+        - uses: actions/setup-python@main
+          with:
+              python-version: 3.x
         - run: |
               curl -L https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2 | tar -xj boost_1_76_0/boost
               mv boost_1_76_0/boost boost
               g++ -std=c++2b -O2 -march=native -fmodules-ts -I. hyp2f1.cpp main.cpp
               ./a.out
+              python -c ''
