@@ -52,7 +52,7 @@ export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<d
 }*/
 
 export module hyp2f1;  // module declaration
-import <iostream>;         // import declaration
+#include <iostream>;         // import declaration
  
 export void hello() {      // export declaration
     std::cout << "Hello world!\n";
