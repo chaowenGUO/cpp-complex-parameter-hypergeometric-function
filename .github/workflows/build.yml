@@ -5,7 +5,7 @@ jobs:
         steps:
         - uses: actions/checkout@main
         - run: |
-              curl -L https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2 | tar -xj -C boost --strip-components 1
+              curl -L https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2 | tar -xj --strip-components 1
               #clang++ -std=c++2a -O2 -march=native -fmodules-ts --precompile hyp2f1.cppm
               #clang++ -std=c++2a -O2 -march=native -fmodules-ts -fprebuilt-module-path=. hyp2f1.pcm main.cpp
               #./a.out
