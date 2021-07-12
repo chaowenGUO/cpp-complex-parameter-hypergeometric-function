@@ -59,13 +59,13 @@ typedef std::vector< double > state_type;
 
 const double gam = 0.15;
 
-void harmonic_oscillator( const state_type &x , state_type &dxdt , const double )
+export void harmonic_oscillator( const state_type &x , state_type &dxdt , const double )
 {
     dxdt[0] = x[1];
     dxdt[1] = -x[0] - gam*x[1];
 }
 
-class harm_osc {
+export class harm_osc {
 
     double m_gam;
 
@@ -79,7 +79,7 @@ public:
     }
 };
 
-struct push_back_state_and_time
+export struct push_back_state_and_time
 {
     std::vector< state_type >& m_states;
     std::vector< double >& m_times;
