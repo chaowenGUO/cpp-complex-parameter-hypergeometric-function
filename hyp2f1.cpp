@@ -51,9 +51,11 @@ export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<d
     return dependentVariable.front();
 }*/
 
-export module hyp2f1;  // module declaration
-#include <iostream>       // import declaration
- 
-export void hello() {      // export declaration
-    std::cout << "Hello world!\n";
+module;
+#include <iostream>
+#include <string_view>
+export module hyp2f1;
+export void greeter (std::string_view const &name)
+{
+  std::cout << "Hello " << name << "!\n";
 }
