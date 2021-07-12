@@ -1,5 +1,6 @@
 module;
 #include <boost/numeric/odeint/stepper/bulirsch_stoer.hpp>
+#include <boost/numeric/odeint/integrate/integrate_adaptive.hpp>
 export module hyp2f1;
 
 namespace {
@@ -20,7 +21,7 @@ std::array<std::complex<double>, 2> hypser(std::complex<double> const &A, std::c
         a += 1;
         b += 1;
         c += 1;
-    }boost::numeric::odeint::bulirsch_stoer
+    }
     throw("convergence failure in hypser");
 }
 
