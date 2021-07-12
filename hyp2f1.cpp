@@ -1,6 +1,5 @@
-module;
 #include <boost/numeric/odeint.hpp>
-export module hyp2f1;
+#include "hyp2f1.hpp"
 
 namespace {
 
@@ -26,7 +25,7 @@ std::array<std::complex<double>, 2> hypser(std::complex<double> const &A, std::c
 
 } // namespace
 
-export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<double> const &B,
+std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<double> const &B,
                                    std::complex<double> const &C, std::complex<double> const &Z)
 {
     std::complex<double> z0;
