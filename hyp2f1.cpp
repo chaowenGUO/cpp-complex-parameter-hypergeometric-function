@@ -52,8 +52,8 @@ export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<d
 }*/
 
 module;
-#include <iostream>
-#include <string_view>
+import <iostream>;
+import <string_view>;
 export module hyp2f1;
 export void greeter (std::string_view const &name)
 {
