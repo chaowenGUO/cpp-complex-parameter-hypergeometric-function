@@ -72,7 +72,7 @@ class harm_osc {
 public:
     harm_osc( double gam ) : m_gam(gam) { }
 
-    void operator() ( const state_type &x , state_type &dxdt , const double /* t */ )
+    void operator() ( const state_type &x , state_type &dxdt , const double)
     {
         dxdt[0] = x[1];
         dxdt[1] = -x[0] - m_gam*x[1];
