@@ -1,5 +1,5 @@
 #include <boost/numeric/odeint.hpp>
-#include "hyp2f1.hpp"
+#include "hyp2f1.h"
 
 namespace {
 
