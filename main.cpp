@@ -21,5 +21,4 @@ import hyp2f1;
 int main (void)
 {
   greeter ("world");
-  return 0;
 }
