@@ -1,7 +1,6 @@
-import hyp2f1;
-
 #include<iostream>
 #include<complex>
+import hyp2f1;
 
 int main()
 {
