@@ -9,7 +9,7 @@ jobs:
               #clang++ -std=c++2a -O2 -march=native -fmodules-ts --precompile hyp2f1.cppm
               #clang++ -std=c++2a -O2 -march=native -fmodules-ts -fprebuilt-module-path=. hyp2f1.pcm main.cpp
               #./a.out
-              git add 
+              git add -A
               git config user.name 'Your Name'
               git config user.email 'you@example.com'
               git commit --allow-empty-message -m ''
