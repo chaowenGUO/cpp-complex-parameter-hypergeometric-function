@@ -1,6 +1,6 @@
-#include <boost/numeric/odeint.hpp>
-
 export module hyp2f1;
+
+#include <boost/numeric/odeint.hpp>
 
 namespace {
 
