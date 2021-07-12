@@ -1,4 +1,4 @@
-export module hyp2f1;
+/*export module hyp2f1;
 
 #include <boost/numeric/odeint.hpp>
 
@@ -49,4 +49,11 @@ export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<d
         },
         dependentVariable, 0., 1., 0.1);
     return dependentVariable.front();
+}*/
+
+export module hyp2f1;  // module declaration
+import <iostream>;         // import declaration
+ 
+export void hello() {      // export declaration
+    std::cout << "Hello world!\n";
 }
