@@ -52,6 +52,8 @@ export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<d
 }*/
 
 module;
+#include <vector>
+#include <iostream>
 #include <boost/numeric/odeint.hpp>
 export module hyp2f1;
 
