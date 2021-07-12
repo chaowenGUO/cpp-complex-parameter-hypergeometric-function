@@ -16,6 +16,7 @@ int main()
 //g++ -std=c++2a -O2 -march=native -ftree-vectorize -ffast-math
 //clang++-libc++ -std=c++2a -O2 -march=native -fno-math-errno
 
+import hyp2f1;
 #include <boost/numeric/odeint.hpp>
 
 int main()
