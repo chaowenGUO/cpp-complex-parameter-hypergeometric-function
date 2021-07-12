@@ -52,6 +52,7 @@ export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<d
 }*/
 
 module;
+#include <vector>
 export module hyp2f1;
 
 typedef std::vector< double > state_type;
