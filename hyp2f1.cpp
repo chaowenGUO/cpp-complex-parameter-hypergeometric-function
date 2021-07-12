@@ -1,4 +1,4 @@
-/*module;
+module;
 #include <boost/numeric/odeint.hpp>
 export module hyp2f1;
 
@@ -49,47 +49,4 @@ export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<d
         },
         dependentVariable, 0., 1., 0.1);
     return dependentVariable.front();
-}*/
-
-module;
-#include <vector>
-export module hyp2f1;
-
-typedef std::vector< double > state_type;
-
-const double gam = 0.15;
-
-export void harmonic_oscillator( const state_type &x , state_type &dxdt , const double )
-{
-    dxdt[0] = x[1];
-    dxdt[1] = -x[0] - gam*x[1];
 }
-
-export class harm_osc {
-
-    double m_gam;
-
-public:
-    harm_osc( double gam ) : m_gam(gam) { }
-
-    void operator() ( const state_type &x , state_type &dxdt , const double)
-    {
-        dxdt[0] = x[1];
-        dxdt[1] = -x[0] - m_gam*x[1];
-    }
-};
-
-export struct push_back_state_and_time
-{
-    std::vector< state_type >& m_states;
-    std::vector< double >& m_times;
-
-    push_back_state_and_time( std::vector< state_type > &states , std::vector< double > &times )
-    : m_states( states ) , m_times( times ) { }
-
-    void operator()( const state_type &x , double t )
-    {
-        m_states.push_back( x );
-        m_times.push_back( t );
-    }
-};
