@@ -3,8 +3,7 @@ module;
 #include <boost/numeric/odeint/integrate/integrate_adaptive.hpp>
 export module hyp2f1;
 
-std::array<std::complex<double>, 2> hypser(std::complex<double> const &A, std::complex<double> const &B,
-                                           std::complex<double> const &C, std::complex<double> const &Z)
+std::array<std::complex<double>, 2> hypser(std::complex<double> const &A, std::complex<double> const &B, std::complex<double> const &C, std::complex<double> const &Z)
 {
     std::complex<double> series, deriv, fac{1};
     auto temp{fac}, a{A}, b{B}, c{C};
@@ -23,8 +22,7 @@ std::array<std::complex<double>, 2> hypser(std::complex<double> const &A, std::c
     throw("convergence failure in hypser");
 }
 
-export std::complex<double> hyp2f1(std::complex<double> const &A, std::complex<double> const &B,
-                                   std::complex<double> const &C, std::complex<double> const &Z)
+export auto hyp2f1(std::complex<double> const &A, std::complex<double> const &B, std::complex<double> const &C, std::complex<double> const &Z)
 {
     std::complex<double> z0;
     if (std::norm(Z) <= 0.25) return hypser(A, B, C, Z).front();
