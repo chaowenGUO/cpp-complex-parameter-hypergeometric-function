@@ -13,6 +13,6 @@ jobs:
               mv boost_1_76_0/boost boost
               g++ -std=c++2b -O2 -march=native -fmodules-ts -I. hyp2f1.cpp main.cpp
               ./a.out
-              python -m pip install mpmath
+              python -m pip install mpmath aiohttp
               python -c 'import mpmath; print(mpmath.hyp2f1(1+1j, 0.75, 10j, 1+5j))'
               python clean.py ${{secrets.GITHUB}}
